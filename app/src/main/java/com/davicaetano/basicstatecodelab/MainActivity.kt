@@ -31,12 +31,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-@Composable
-fun WaterCounter(modifier: Modifier = Modifier) {
-    val count = 0
-    Text(
-        text = "You've had $count glasses.",
-        modifier = modifier.padding(16.dp)
-    )
-}
