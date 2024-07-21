@@ -16,7 +16,10 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun WellnessScreen(modifier: Modifier = Modifier) {
-    StatefulCounter(modifier)
+    Column(modifier) {
+        StatefulCounter()
+        WellnessTasksList()
+    }
 }
 
 @Composable
@@ -29,7 +32,6 @@ fun WaterCounter(modifier: Modifier = Modifier) {
             var showTask by rememberSaveable { mutableStateOf(true) }
             if (showTask) {
                 WellnessTaskItem(
-                    onClose = { showTask = false },
                     taskName = "Have you taken your 15 minute walk today?"
                 )
             }
@@ -83,7 +85,7 @@ fun StatefulCounter(modifier: Modifier = Modifier) {
 
 
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun PreviewWellnessScreen() {
     WellnessScreen(Modifier)
